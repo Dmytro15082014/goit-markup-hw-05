@@ -85,7 +85,7 @@
       <!-- Features -->
       <section class="features">
         <div class="container">
-          <h2 class="features-title">Features</h2>
+          <h2 class="visually-hidden">Features</h2>
           <ul class="features-list">
             <li class="features-item">
               <div class="icon-cont">
@@ -482,24 +482,25 @@
             </li>
           </ul>
         </div>
-        <form action="subscribe" class="form-sbscrb">
-          <label for="email" class="sbscrb-info">Subscribe</label>
-          <div class="sub-cont">
-            <input
-              type="email"
-              class="sbscrb-email"
-              placeholder="E-mail"
-              name="user_email"
-              id="email"
-              required
-            />
+        <div class="sbscrb-container">
+          <p class="sbscrb-info">Subscribe</p>
+          <form class="sub-cont">
+            <label for="" class="sbscrb-email-label"
+              ><input
+                type="email"
+                class="sbscrb-email"
+                placeholder="E-mail"
+                name="user_email"
+                id="email"
+                required
+            /></label>
             <button class="sbscrb-btn" type="submit">
-              Subscribe<svg class="send-icon" width="24" height="20">
+              Subscribe<svg class="send-icon" width="24" height="24">
                 <use href="./images/icons.svg#send"></use>
               </svg>
             </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </footer>
 
@@ -515,16 +516,16 @@
 
         <form class="modal-user-form">
           <div class="form-user-box">
-            <label for="modal-user-name" class="form-user-label">Name</label>
+            <label for="user-name" class="form-user-label">Name</label>
             <div class="form-input-container">
               <input
                 type="text"
                 class="form-text-input"
-                id="modal-user-name"
-                name="modal-user-name"
+                id="user-name"
+                name="user-name"
                 required
               />
-              <svg class="form-modal-icon" width="12" height="12">
+              <svg class="form-modal-icon" width="18" height="24">
                 <use href="./images/icons.svg#user"></use>
               </svg>
             </div>
@@ -540,7 +541,7 @@
                 name="modal-user-phone"
                 required
               />
-              <svg class="form-modal-icon" width="12" height="12">
+              <svg class="form-modal-icon" width="18" height="24">
                 <use href="./images/icons.svg#tel"></use>
               </svg>
             </div>
@@ -556,17 +557,17 @@
                 name="modal-user-email"
                 required
               />
-              <svg class="form-modal-icon" width="12" height="12">
+              <svg class="form-modal-icon" width="18" height="24">
                 <use href="./images/icons.svg#mail"></use>
               </svg>
             </div>
           </div>
 
-          <div class="form-user-box">
-            <label for="modal-comment" class="form-user-label">Comment</label>
+          <div class="form-user-textarea">
+            <label for="user-comment" class="form-user-label">Comment</label>
             <textarea
-              name="modal-comment"
-              id="modal-comment"
+              name="user-comment"
+              id="user-comment"
               class="form-user-comment"
               placeholder="Text input"
             ></textarea>
@@ -575,12 +576,13 @@
           <div class="modal-checkbox">
             <input
               type="checkbox"
-              class="checkbox features-title"
-              id="form-check-policy"
-              name="form-check-policy"
+              class="checkbox visually-hidden"
+              id="user-privacy"
+              name="user-privacy"
+              value="true"
               required
             />
-            <label for="form-check-policy" class="accept-text"
+            <label for="user-privacy" class="accept-text"
               ><span class="custom-checkbox"
                 ><svg class="custom-check-icon" width="10" height="8">
                   <use href="./images/icons.svg#click"></use>

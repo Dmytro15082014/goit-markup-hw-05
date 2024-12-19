@@ -175,7 +175,7 @@ img{
     padding: 120px 0;
 }
 
-.features-title {
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -433,12 +433,11 @@ footer .logo-accent {
 /* .form-sbscrb{} */
 
 .sbscrb-info{
-    display: block;
-    color: #ffffff;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    color: #ffffff;
     margin-bottom: 16px;
 }
 .sub-cont{
@@ -446,7 +445,10 @@ footer .logo-accent {
     gap: 24px;
 }
 .sbscrb-email{
-    background-color: #2e2f42;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    background-color: transparent;
     border: 1px solid #fff;
     border-radius: 4px;
     width: 264px;
@@ -463,16 +465,20 @@ footer .logo-accent {
     color: #ffffff;
 }   
 .sbscrb-btn{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
     border-radius: 4px;
-    padding: 8px 24px;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
     background-color: #4d5ae5;
     color: #ffffff;
+    cursor: pointer;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sbscrb-btn:hover, .sbscrb-btn:focus{
@@ -480,6 +486,7 @@ footer .logo-accent {
 }
 .send-icon{
     fill: #ffffff;
+    margin-left: 16px;
 }
 /* #endregion */
 
@@ -494,7 +501,8 @@ footer .logo-accent {
     background-color: rgba(46, 47, 66, 0.4);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-open{
     opacity: 1;
@@ -505,32 +513,41 @@ footer .logo-accent {
     position: absolute;
     top: 50%;
     left: 50%;
-    max-width: 408px;
+    width: 408px;
     min-height: 584px;
     transform: translate(-50%, -50%);
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
     border-radius: 4px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn{
-    display: block;
+    position: absolute;
+    top: 24px;
+    right: 24px;
     width: 24px;
     height: 24px;
     margin-right: 0;
     margin-left: auto;
     margin-bottom: 24px;
-    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #e7e9fc;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-icon{
     stroke: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn:hover, .modal-close-btn:focus{
     fill: #ffffff;
     background-color: #404bbf;
+    border: none;
 }
 .modal-text{
     font-weight: 500;
@@ -548,15 +565,16 @@ footer .logo-accent {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 8px;
 }
 
-/* .form-user-box {} */
+.form-user-box {
+    margin-bottom: 8px;
+}
 
 .form-user-label {
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
     display: block;
@@ -568,17 +586,18 @@ footer .logo-accent {
 .form-text-input {    
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
+    background-color: transparent;
     width: 100%;
     height: 40px;
     padding-left: 38px;
-    outline: none;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-modal-icon {
     position: absolute;
     top: 50%;
-    left: 19px;
+    left: 16px;
     transform: translateY(-50%);
     fill: #2e2f42;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -590,15 +609,23 @@ footer .logo-accent {
     fill: #4d5ae5;
 }
 .form-user-comment{
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
     width: 100%;
     height: 120px;
     resize: none;
-    padding-top: 8px;
-    padding-left: 16px;
-    outline: none;
+    padding: 8px 16px;
+    outline: transparent;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-user-textarea{
+    margin-bottom: 16px;
 }
 
 .form-user-comment::placeholder{
@@ -613,6 +640,10 @@ footer .logo-accent {
     border: 1px solid #4d5ae5;
 }
 .send-btn{
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    border: none;
     border-radius: 4px;
     padding: 16px 32px;
     min-width: 169px;
@@ -643,7 +674,7 @@ footer .logo-accent {
     border: 1px solid rgba(46, 47, 66, 0.4);
     cursor: pointer;
     margin-right: 8px; 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .checkbox:checked+ .accept-text .custom-checkbox{
     border: transparent;
@@ -653,7 +684,7 @@ footer .logo-accent {
 .accept-text{
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
 }
